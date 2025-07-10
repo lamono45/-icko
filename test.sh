@@ -14,7 +14,7 @@ green='\e[0;32m'
 ipsaya=$(wget -qO- ipinfo.io/ip)
 CITY=$(wget -qO- ipinfo.io/city)
 TIME=$(date '+%d %b %Y')
-REPO="https://raw.githubusercontent.com/nishikazekazata/hah/main/"
+REPO="https://raw.githubusercontent.com/lamono4/hah/main/"
 TIMES="10"
 CHATID="-6617783693"
 KEY="6751589620:AAHwjP6dzZhuqeyUOdYFc6742Q1YUVF1EjM"
@@ -511,8 +511,8 @@ EOF
 
 
 restart_system() {
-    USRSC=$(wget -qO- https://raw.githubusercontent.com/nishikazekazata/izin/main/ip | grep $ipsaya | awk '{print $2}')
-    EXPSC=$(wget -qO- https://raw.githubusercontent.com/nishikazekazata/izin/main/ip | grep $ipsaya | awk '{print $3}')
+    USRSC=$(wget -qO- https://raw.githubusercontent.com/lamono45/izin/main/ip | grep $ipsaya | awk '{print $2}')
+    EXPSC=$(wget -qO- https://raw.githubusercontent.com/lamono45/izin/main/ip | grep $ipsaya | awk '{print $3}')
     TIMEZONE=$(printf '%(%H:%M:%S)T')
     TEXT="
 <code>────────────────────</code>
