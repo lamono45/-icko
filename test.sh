@@ -17,8 +17,8 @@ TIME=$(date '+%d %b %Y')
 REPO="https://raw.githubusercontent.com/lamono4/hah/main/"
 TIMES="10"
 CHATID="-6617783693"
-KEY="6751589620:AAHwjP6dzZhuqeyUOdYFc6742Q1YUVF1EjM"
-URL="https://api.telegram.org/bot$KEY/sendMessage"
+#KEY="6751589620:AAHwjP6dzZhuqeyUOdYFc6742Q1YUVF1EjM"
+#URL="https://api.telegram.org/bot$KEY/sendMessage"
 
 source '/etc/os-release'
 cd "$(
