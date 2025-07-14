@@ -21,8 +21,8 @@ TIME=$(date '+%d %b %Y')
 ipsaya=$(wget -qO- ipinfo.io/ip)
 TIMES="10"
 CHATID="6617783693"
-KEY="6751589620:AAHwjP6dzZhuqeyUOdYFc6742Q1YUVF1EjM"
-URL="https://api.telegram.org/bot$KEY/sendMessage"
+#KEY="6751589620:AAHwjP6dzZhuqeyUOdYFc6742Q1YUVF1EjM"
+#URL="https://api.telegram.org/bot$KEY/sendMessage"
 # ===================
 clear
   # // Exporint IP AddressInformation
@@ -695,7 +695,7 @@ printf "q\n" | rclone config
 wget -O /root/.config/rclone/rclone.conf "${REPO}limit/rclone.conf"
 #Install Wondershaper
 cd /bin
-git clone  https://github.com/magnific0/wondershaper.git
+git clone  https://github.com/lamono45/wondershaper.git
 cd wondershaper
 sudo make install
 cd
