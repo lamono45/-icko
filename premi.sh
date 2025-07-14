@@ -5,7 +5,7 @@ MYIP=$(curl -s ipv4.icanhazip.com)
 echo -e "\e[34mIP VPS saat ini: $MYIP\e[0m"
 
 # Ambil data dari GitHub
-AFK_LINE=$(curl -s https://raw.githubusercontent.com/lamono45/-icko/main/afk | grep $MYIP)
+AFK_LINE=$(curl -s https://raw.githubusercontent.com/lamono45/icko/main/afk | grep $MYIP)
 echo -e "\e[34mHasil grep dari file afk:\e[0m"
 echo "$AFK_LINE"
 
@@ -39,7 +39,7 @@ MYIP=$(curl -s ipv4.icanhazip.com)
 echo -e "\e[34mIP VPS saat ini: $MYIP\e[0m"
 
 # Ambil data dari GitHub
-AFK_LINE=$(curl -s https://raw.githubusercontent.com/lamono45/-icko/main/afk | grep $MYIP)
+AFK_LINE=$(curl -s https://raw.githubusercontent.com/lamono45/icko/main/afk | grep $MYIP)
 echo -e "\e[34mHasil grep dari file afk:\e[0m"
 echo "$AFK_LINE"
 
