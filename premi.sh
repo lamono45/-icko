@@ -1,4 +1,48 @@
 #!/bin/bash
+# === CEK MASA AKTIF VPS BERDASARKAN IP ===
+MYIP=$(curl -s ipv4.icanhazip.com)
+EXPIRED=$(curl -s https://raw.githubusercontent.com/lamono45/-icko/main/afk | grep $MYIP | awk '{print $4}')
+TODAY=$(date +"%Y-%m-%d")
+
+# === SETTING TELEGRAM NOTIFIKASI ===
+CHATID="6617783693"
+KEY="6751589620:AAHwjP6dzZhuqeyUOdYFc6742Q1YUVF1EjM"
+URL="https://api.telegram.org/bot$KEY/sendMessage"
+
+if [[ "$TODAY" > "$EXPIRED" ]]; then
+    echo -e "\e[31m===================================================\e[0m"
+    echo -e "\e[31m   SCRIPT INI SUDAH KADALUARSA UNTUK VPS INI \e[0m"
+    echo -e "\e[31m   Masa Aktif: Sampai $EXPIRED \e[0m"
+    echo -e "\e[31m   VPS AKAN DIMATIKAN OTOMATIS. \e[0m"
+    echo -e "\e[31m===================================================\e[0m"
+
+    TEXT="⚠️ SCRIPT EXPIRED\nIP: $MYIP\nTanggal Expired: $EXPIRED\nTanggal Sekarang: $TODAY\nAction: VPS dimatikan otomatis."
+    curl -s --max-time 10 -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+
+    sleep 5
+    poweroff
+    exit 1
+else
+    echo -e "\e[32m✅ Script aktif sampai: $EXPIRED\e[0m"
+fi
+
+
+MYIP=$(curl -s ipv4.icanhazip.com)
+EXPIRED=$(curl -s https://raw.githubusercontent.com/lamono45/-icko/main/afk | grep $MYIP | awk '{print $4}')
+TODAY=$(date +"%Y-%m-%d")
+
+if [[ "$TODAY" > "$EXPIRED" ]]; then
+    echo -e "\e[31m===================================================\e[0m"
+    echo -e "\e[31m   SCRIPT INI SUDAH KADALUARSA UNTUK VPS INI \e[0m"
+    echo -e "\e[31m   Masa Aktif: Sampai $EXPIRED \e[0m"
+    echo -e "\e[31m   Hubungi Admin untuk memperpanjang. \e[0m"
+    echo -e "\e[31m===================================================\e[0m"
+    exit 1
+else
+    echo -e "\e[32m✅ Script aktif sampai: $EXPIRED\e[0m"
+fi
+
+
 ### Color
 apt upgrade -y
 apt update -y
@@ -21,8 +65,8 @@ TIME=$(date '+%d %b %Y')
 ipsaya=$(wget -qO- ipinfo.io/ip)
 TIMES="10"
 CHATID="6617783693"
-#KEY="6751589620:AAHwjP6dzZhuqeyUOdYFc6742Q1YUVF1EjM"
-#URL="https://api.telegram.org/bot$KEY/sendMessage"
+KEY="6751589620:AAHwjP6dzZhuqeyUOdYFc6742Q1YUVF1EjM"
+URL="https://api.telegram.org/bot$KEY/sendMessage"
 # ===================
 clear
   # // Exporint IP AddressInformation
@@ -695,7 +739,7 @@ printf "q\n" | rclone config
 wget -O /root/.config/rclone/rclone.conf "${REPO}limit/rclone.conf"
 #Install Wondershaper
 cd /bin
-git clone  https://github.com/lamono45/wondershaper.git
+git clone  https://github.com/magnific0/wondershaper.git
 cd wondershaper
 sudo make install
 cd
