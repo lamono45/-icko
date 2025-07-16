@@ -51,7 +51,7 @@ BGX="\033[42m"
 END='\e[0m'
 AKTIF="VERIFIED"
 
-#REPO="https://github.com/nishikazekazata/izin.git"
+REPO="https://github.com/nishikazekazata/izin.git"
 EMAIL="nishikazekazata@gmail.com"
 USER="nishikazekazata"
 
