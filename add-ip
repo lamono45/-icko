@@ -1,14 +1,17 @@
 #!/bin/bash
 NC='\e[0m'
-dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
-ipsaya=$(wget -qO- ipinfo.io/ip)
-data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-date_list=$(date +"%Y-%m-%d" -d "$data_server")
+# Ambil tanggal dari server Google (format bersih)
+dateFromServer=$(curl -sI https://google.com | grep -i ^Date: | sed -e 's/Date: //' | tr -d '\r')
+biji=$(date +"%Y-%m-%d" -d "$dateFromServer")
+# Ambil IP publik VPS
+ipsaya=$(curl -s https://api.ipify.org)
+# Pakai tanggal yang sama untuk pengecekan lisensi
+date_list=$(date +"%Y-%m-%d" -d "$dateFromServer")
+# Link data IP
 data_ip="https://raw.githubusercontent.com/lamono45/Regist/main/afk"
 checking_sc() {
-  useexp=$(wget -qO- $data_ip | grep $ipsaya | awk '{print $3}')
-  if [[ $date_list < $useexp ]]; then
+  useexp=$(curl -s "$data_ip" | grep "$ipsaya" | awk '{print $3}')
+  if [[ "$date_list" < "$useexp" ]]; then
     echo -ne
   else
     echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
