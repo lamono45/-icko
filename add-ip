@@ -54,9 +54,9 @@ BGX="\033[42m"
 END='\e[0m'
 AKTIF="VERIFIED"
 
-REPO="https://github.com/nishikazekazata/izin.git"
-EMAIL="nishikazekazata@gmail.com"
-USER="nishikazekazata"
+REPO="https://github.com/lamono45/izin.git"
+EMAIL="lamono45@gmail.com"
+USER="lamono45"
 
 
 add-ip() {
@@ -118,7 +118,7 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
     git add . &> /dev/null
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/lamono45/izin
+    git remote add origin git@github.com:lamono45/izin.git
     
     rm -rf /root/ipvps
     clear
@@ -192,7 +192,7 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
     git add . &> /dev/null
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/lamono45/izin
+    git remote add origin git@github.com:lamono45/izin.git
     
     rm -rf /root/ipvps
     clear
@@ -264,7 +264,7 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
     git add . &> /dev/null
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/lamono45/izin
+    git remote add origin git@github.com:lamono45/izin.git
     
     rm -rf /root/ipvps
     clear
